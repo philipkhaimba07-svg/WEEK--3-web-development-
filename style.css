@@ -1,0 +1,197 @@
+/* ===== STEP 1 & 2: Fonts and Color Palette =====
+   Poppins = headings, Inter = body text
+   Colors: teal (primary), off-white (background),
+   white (cards), orange (accent/buttons) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --color-primary: #1f3a3d;   /* deep teal - headings, table header */
+  --color-bg: #f4f1ea;        /* warm off-white - page background */
+  --color-card: #ffffff;      /* white - card backgrounds */
+  --color-accent: #e8873d;    /* warm orange - buttons, highlights */
+  --color-accent-dark: #cf701f;
+  --color-text: #333333;
+  --color-border: #d8d3c8;
+  --color-stripe: #f1ede3;
+}
+
+/* ===== Base page styling ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 24px;
+  line-height: 1.5;
+}
+
+h1, h2 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-primary);
+  margin: 0 0 10px 0;
+}
+
+/* ===== STEP 3: Page heading as a "card" =====
+   The <header> wraps the h1 and intro paragraph,
+   so the card styling is applied once, cleanly,
+   using margin, padding, border, border-radius */
+header {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(31, 58, 61, 0.08);
+}
+
+header h1 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 8px 0;
+}
+
+header h1 img {
+  border-radius: 6px;
+}
+
+header p {
+  margin: 0;
+  color: var(--color-text);
+}
+
+/* ===== Section "cards" (video, form, table) ===== */
+section {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(31, 58, 61, 0.08);
+}
+
+section h2 {
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+/* ===== STEP 4: Form styling ===== */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Descendant selector: inputs/select inside the form */
+.add-expense-section input,
+.add-expense-section select {
+  font-family: 'Inter', sans-serif;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: 14px;
+}
+
+/* :focus selector: highlight active field */
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(232, 135, 61, 0.25);
+  background-color: var(--color-card);
+}
+
+button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: var(--color-accent);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--color-accent-dark);
+}
+
+details {
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  background-color: var(--color-stripe);
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+}
+
+summary {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+/* ===== Table styling ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  border: 1px solid var(--color-border);
+  padding: 12px 14px;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+}
+
+thead {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+thead th {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background-color: var(--color-stripe);
+}
+
+/* Direct child selector: only tr's directly inside tbody */
+tbody > tr {
+  transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+  background-color: #fbe8d6;
+}
+
+/* :not() selector: keep the Amount column right-aligned, others left */
+td:not(:nth-child(2)) {
+  text-align: left;
+}
+
+td:nth-child(2) {
+  text-align: right;
+  font-weight: 600;
+}
+
+/* Video section iframe spacing */
+.video-section iframe {
+  border-radius: 8px;
+  margin-top: 8px;
+}

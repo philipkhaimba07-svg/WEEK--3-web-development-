@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Budget Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1><img src="https://cdn-icons-png.flaticon.com/512/2830/2830284.png" alt="Budget tracker logo" width="40"> My Budget Tracker</h1>
+  <p>Track your income and expenses in one place.</p>
+</header>
+
+<section class="video-section">
+  <h2>Budgeting Tip Video</h2>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ZmthxqxuFQI" title="Budgeting tips" frameborder="0"></iframe>
+</section>
+
+<section class="add-expense-section">
+<details>
+  <summary>How to use this tracker</summary>
+  <p>Fill in the expense name, amount, and category, then click "Add Expense" to record it. Your expenses will appear in the table below.</p>
+</details>
+  <h2>Add Expense</h2>
+  <form>
+    <input type="text" id="expense-name" placeholder="Expense name">
+    <input type="number" id="expense-amount" placeholder="Amount">
+
+    <select id="expense-category">
+      <option value="food">Food</option>
+      <option value="transport">Transport</option>
+      <option value="rent">Rent</option>
+      <option value="entertainment">Entertainment</option>
+      <option value="other">Other</option>
+    </select>
+
+    <button type="button">Add Expense</button>
+  </form>
+</section>
+
+<section class="expenses-section">
+  <h2>Your Expenses</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Category</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Lunch</td>
+        <td>500</td>
+        <td>Food</td>
+        <td>2026-09-23</td>
+      </tr>
+      <tr>
+        <td>School Fees</td>
+        <td>1000</td>
+        <td>Other</td>
+        <td>2026-09-23</td>
+      </tr>
+      <tr>
+        <td>Bus Fare</td>
+        <td>150</td>
+        <td>Transport</td>
+        <td>2026-09-22</td>
+      </tr>
+      <tr>
+        <td>Rent</td>
+        <td>15000</td>
+        <td>Rent</td>
+        <td>2026-09-20</td>
+      </tr>
+      <tr>
+        <td>Movie Night</td>
+        <td>800</td>
+        <td>Entertainment</td>
+        <td>2026-09-18</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+</body>
+</html>
